@@ -41,8 +41,11 @@ public class Programa {
 				}
 				
 				if (chessMatch.getPromoted() != null) {
-					System.out.println("Entre com a peca para promocao (Q/B/C/T): ");
-					String type = sc.nextLine();
+					String type = null;
+					while (!type.equals("Q") && !type.equals("B") && !type.equals("C") && !type.equals("T")) {
+						System.out.print("Entre com a peca para promocao (Q/B/C/T): ");
+						type = sc.nextLine().toUpperCase();
+					}	
 					chessMatch.replacePromotedPiece(type);
 				}
 			}
